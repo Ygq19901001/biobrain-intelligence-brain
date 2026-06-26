@@ -1,7 +1,7 @@
 ---
 name: intelligence-brain
 slug: intelligence-brain
-version: 1.0.0
+version: 1.0.1
 displayName: "Intelligence Brain — AI原生公司大脑"
 summary: "AI-native company intelligence engine with 8-step metabolic pipeline, cross-file inference, neural chain design, and information classification routing."
 description: "AI-native company intelligence engine with 8-step metabolic pipeline, cross-file inference, neural chain design, and information classification routing."
