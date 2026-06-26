@@ -2,230 +2,209 @@
 name: intelligence-brain
 slug: intelligence-brain
 version: 1.0.0
-displayName: Intelligence Brain
-description: AI-native company intelligence engine with 8-step metabolic pipeline, cross-file inference, neural chain design, and information classification routing.
-tags: [intelligence, knowledge-management, data-pipeline, agent-brain, information-classification, neural-chain]
+displayName: "Intelligence Brain — AI原生公司大脑"
+summary: "AI-native company intelligence engine with 8-step metabolic pipeline, cross-file inference, neural chain design, and information classification routing."
+description: "AI-native company intelligence engine with 8-step metabolic pipeline, cross-file inference, neural chain design, and information classification routing."
+tags:
+  - intelligence
+  - pipeline
+  - agent
+  - information-processing
+  - neural-chain
 license: MIT
 ---
 
-# Intelligence Brain — AI-Native Company Intelligence Engine
+# Intelligence Brain — AI原生公司大脑
 
-Not a database. An engine.
+大多数Agent组织的"大脑"是什么？一个共享文件夹，几份周报，CEO的直觉。信息进得来出不去——或者更糟，变成和谁都不发生关系的死数据。
 
-Existing "brain" skills store facts. They cache. They retrieve. That's useful — but it's a library, not a brain. A real brain doesn't just store information. It ingests, digests, connects, infers, and outputs actionable intelligence.
-
-Intelligence Brain is the engine that powered a live 7-department AI company's DataCenter — the department that gathered intelligence, managed agents, built neural chains, and produced cross-file inferences that no single document contained.
+Intelligence Brain是一套让信息变成决策的引擎。不是存起来——是消化、拆解、重组、追踪、举一反三。信息进入系统后24小时内，你要么在用它在做决策，要么在教Agent用好它，要么它被判定为垃圾然后清走了。
 
 ---
 
-## What This Is
+## 五分钟：信息进来到决策落地
 
-An intelligence processing methodology with concrete implementation patterns. The brain:
+一个情报进了公司。接下来发生了什么？
 
-1. **Ingests** raw information from multiple sources
-2. **Processes** it through an 8-step metabolic pipeline
-3. **Infers** cross-document insights via WISDOM_GRAPH and ACTION_PIPELINE
-4. **Routes** outputs based on information classification
-5. **Manages** agent lifecycles and inter-agent neural chains
+大多数情况：有人发了个链接→有人回复"看看"→然后就没有然后了。信息死了。
+
+这个skill的答案：
+```
+信息进入
+  → 第1步 采集（怎么来的、可信度多少）
+  → 第2步 解析（拆成结构化片段，不是转成Markdown就完了）
+  → 第3步 拆解（哪个片段属于哪个部门）
+  → 第4步 整理（和已有信息比对——这信息过时了吗？和昨天那篇矛盾吗？）
+  → 第5步 合并（不是复制粘贴，是把新信息和旧信息组成新结论）
+  → 第6步 使用（品牌部能不能引用？销售部能不能当武器？法务部有没有风险点？）
+  → 第7步 删除（原信息在24h内归档/清空，不囤积）
+  → 第8步 举一反三（这条信息背后有没有没写出来的趋势？）
+```
+
+每个步骤都有SLA。每条信息进入时打上密级标签——这个密级决定了它走哪个模型、能不能传到外部信道。
 
 ---
 
-## The 8-Step Metabolic Pipeline
+## 进化阶梯
 
-Raw information enters the company daily. Without a processing system, it accumulates as noise. The pipeline transforms noise into intelligence:
+### L1：部署管线（第一天）
+设好company/data/signals/目录。设好摄入cron。第一条信息跑过八步管线。你看到的不再是"一篇转载文章"——你看到了"3个部门可用的5条信号"。
+
+### L2：积累信号（第一周）
+你有十几条处理过的信号了。你开始看到跨文件的模式——"这三篇看起来不相干，但都在指出同一个趋势"。你开始在signals/目录里建立WISDOM_GRAPH节点。
+
+### L3：预测性推理（第一月）
+系统不止在回看。开始往前看。"基于过去30天的信号积累，下周这个行业可能会发生什么变化。"ACTION_PIPELINE自动生成了P0-P3优先级的行动建议。
+
+### L4：自主决策引擎（第三月+）
+你只需要看ONE_MORE_THING——系统自动写的跨文件推论总结。其余P3/P4的行动建议自动过滤掉了。你每天只看3-5条精华。
+
+---
+
+## 实际案例：我们的大脑怎么跑
+
+### 管线运转情况
+
+2026年6月25日，数据中心处理完研读项目后，产出了：
+- **WISDOM_GRAPH**：8个核心节点+6条跨域关系。不是知识点列表——是知识之间的连线
+- **ACTION_PIPELINE**：16条行动建议，四层优先级（P0×4/P1×4/P2×4/P3×4）
+- **ONE_MORE_THING**：6条跨文件推论——"如果A成立且B成立，那么C大概率——但没人同时在跟踪A和B"
+
+### 我们犯过的错
+
+**错1：信号积压**。第一天摄入50条信息，第二天还在消化。管线堵死了。
+修复：上限≤1000条信号。超了归档旧信号。大脑不是仓库——是消化系统。
+
+**错2：信息交叉污染**。两个部门的信号混在一个目录里，谁都没吃。
+修复：信息进入时立即标记归属部门。不属于任何部门的→行政部判定去处或删除。
+
+**错3：研究≠决策**。输出写满了"建议关注""值得注意"，但没有一条说"现在就该做X"。
+修复：每个ACTION_PIPELINE条目强制加上"如果不做，损失是什么"——没有后果的建议是噪音。
+
+---
+
+## 八步管线（每步SLA）
 
 ```
-Step 1: READ     → Ingest incoming data (reports, research, outputs)
-Step 2: PARSE    → Extract structured information from raw text
-Step 3: DECOMPOSE→ Break into atomic facts, claims, and data points
-Step 4: ORGANIZE → Categorize by domain, priority, and classification
-Step 5: MERGE    → Cross-reference with existing knowledge, detect duplicates
-Step 6: USE      → Apply to active decisions, content, or strategy
-Step 7: DELETE   → Remove processed raw data (prevent accumulation rot)
-Step 8: EXTRAPOLATE → Generate cross-file inferences (the "One More Thing" step)
+第1步 采集(15min) — 源、时间、可信度、原始格式
+第2步 解析(30min) — 结构化拆解(标题/要点/数据/观点/来源链)
+第3步 拆解(20min) — 分配给相关部门的信号包
+第4步 整理(40min) — 和已有信号比对(重复?过时?矛盾?补充?)
+第5步 合并(1h)    — 新旧信息合成为新洞察
+第6步 使用(2h)    — 各部门标记可引用/可行动数据
+第7步 删除(15min) — 原信息归档or清空,不囤积
+第8步 举一反三(1h)— 跨文件推论+趋势外推
 ```
 
-**Time constraint**: All 8 steps must complete within 24 hours of ingestion. Unprocessed data decays in value exponentially.
+合计SLA：约6小时。实际目标：24h内全链路闭环。超24h未用的信息自动触发"为什么没处理"检查。
 
-### Step Detail: DECOMPOSE
+---
 
-```markdown
-Input: "AI应用加速落地，2026年商业化提速，企业级应用增长300%"
-Output:
-  - [Claim] AI应用落地速度正在加快（来源：行业报告）
-  - [Data] 企业级应用增长300%（需验证：来源、时间范围）
-  - [Trend] 商业化从实验阶段进入加速阶段
-  - [Action] 品牌部：可转化为"AI商业化"内容选题
+## 三大推理模式
+
+### WISDOM_GRAPH（知识图谱化）
+不是写知识库条目。是建立节点之间没有明说但逻辑上成立的关系。
+
+```
+节点A: 免费AI模型提供商增多
+节点B: API调用成本下降
+节点C: Agent外部API依赖增加
+关系: A→B→C，但C导致A的免费模型由于并发量被限流→B虚假
 ```
 
-### Step Detail: EXTRAPOLATE
+为什么值钱：不是因为记录了A/B/C三个事实——是因为它揭示了B可能是假象。
 
-The most valuable step. Cross-file inference finds insights that exist between documents, not within them:
+### ACTION_PIPELINE（四层优先级）
+```
+P0 — 不做会死。24h内必须行动。
+P1 — 不做会亏。本周内行动。
+P2 — 不做会错过。本月内评估。
+P3 — 不做可惜但不急。可推迟。
+```
 
-```markdown
-File A (品牌部报告): "小红书内容互动率下降15%"
-File B (销售部报告): "知识星球付费转化率提升22%"
+每条P0/P1必须写"不行动的代价"。P2/P3可以没有但鼓励。
 
-Cross-file inference: 免费平台引流效率下降 + 付费阵地转化上升
-→ Action: 增加知识星球内容密度，减少小红书发布频率
-→ Update: 变现漏斗权重调整
+防胖规则：P0≤4条。P1≤4条。P2≤4条。P3≤4条。总≤16条。超了强制瘦身——去掉最不紧急的，不是加规则。
+
+### ONE_MORE_THING（跨文件推论）
+系统标注了A→B、C→D的关系后，它再往上看："如果A成立且C成立，那么X——但到目前为止没人同时在跟踪A和C。"
+
+这是人工做不到的事情——不是更难，是更难注意到。你跟踪A，你同事跟踪C，你们都忙各自的。
+
+---
+
+## 信息密级→模型路由
+
+```
+🔴 绝密 — 仅CEO可见,仅本地处理,禁云模型
+🟠 机密 — 部门内部可见,本地+私有云
+🟡 内部 — 全公司可见,可用付费云模型
+🟢 公开 — 可外发,可用免费模型
+```
+
+信号进入管线时自动判定密级。密级决定三件事：
+1. 存放在哪个目录（本地加密/共享目录/公开目录）
+2. 可以用什么模型处理（免费/付费/仅本地）
+3. 能不能写入外部渠道（品牌部发文/销售部对外——只能是🟢级信号）
+
+成本优化：🟢级走免费模型，🟡级走付费稳定模型，🔴🟠级走本地deepseek-v4-pro。分级=省钱。
+
+---
+
+## 神经链设计（三通道冗余）
+
+```
+通道A: sessions_send — 实时，Push型，零延迟
+通道B: 共享文件    — 异步，Pull型，有审计，断网也可读
+通道C: 云文档/飞书  — 云端，跨设备，本地磁盘也不怕
+```
+
+设计原则：
+- 三通道底层机制不同（IPC/文件系统/HTTP API）→不可能同一根因全断
+- 每个部门至少接两条通道。只靠一条=你只有一条命
+- 传输完≠收到。3分钟内无确认→切换通道重传
+- 心跳检测：每15分钟检查各通道连通性
+
+---
+
+## 摄入源管理
+
+每一个摄入源都需要四个元数据：
+1. 该不该摄入？（价值判断）
+2. 谁适合消化？（部门分配）
+3. 多久跟踪一次？（频率）
+4. 什么时候该停？（废弃标准）
+
+没有废弃标准的摄入源是终身债务。你每天看的东西增多，能用的精力减少。
+
+---
+
+## 发布铁律（双审制）
+
+**数据中心（技术审查）**：
+- [ ] 八步管线逻辑可执行
+- [ ] 密级路由白名单完整
+- [ ] 无真实敏感数据示例
+- [ ] 所有文件路径有效
+
+**CEO（内容审查）**：
+- [ ] 推理模式逻辑正确
+- [ ] 差异化定位准确（vs静态知识库/Claude Code）
+- [ ] 公开传播安全
+- [ ] 分层可用
+
+---
+
+## 升级节奏（周迭代）
+
+```
+每周六 双审 → 小修+0.0.1 / 中改+0.1.0 / 大改+1.0.0
 ```
 
 ---
 
-## Cross-File Inference System
+## References
 
-### WISDOM_GRAPH
-
-A network of insights connected across departmental outputs. Nodes are key findings. Edges are inferred relationships.
-
-```
-[小红书互动率↓] ──causes──→ [免费引流效率↓]
-                                     │
-                              ──suggests──→ [增加付费阵地投入]
-                                     │
-[知识星球转化↑] ──validates──→ [付费意愿存在]
-```
-
-### ACTION_PIPELINE
-
-Inferences that become actionable tasks, prioritized by urgency:
-
-| Priority | Count | Example |
-|----------|-------|---------|
-| P0 | ≤4 | AIGC标注合规、退款公示、广告合规、哈希锁定 |
-| P1 | ≤4 | 内容策略调整、平台权重优化 |
-| P2 | ≤4 | 工具升级、流程优化 |
-| P3 | ≤4 | 长期研究、探索性项目 |
-
-Max 4 items per priority tier. Forces ruthless prioritization.
-
-### ONE_MORE_THING
-
-The highest-value inference: insights that connect domains nobody else thought to connect. Example from production:
-
-```
-Marketing data + Legal compliance data → "平台政策变化将影响内容分发策略"
-Sales data + Finance data → "客户获取成本上升但客单价未变 → 定价策略需调整"
-```
-
----
-
-## Neural Chain Architecture
-
-The brain doesn't just process — it builds and maintains the communication infrastructure between agents.
-
-### Design Principles
-
-1. **Redundancy ≥ 3** — At least 3 parallel communication channels
-2. **No single point of failure** — Any one channel can fail without breaking the system
-3. **Async-first** — Agents read when ready, not when messaged
-4. **Auditability** — Every inter-agent communication leaves a trace
-
-### Chain Topology
-
-```
-         ┌──────────┐
-         │   CEO    │ (Decision only)
-         └────┬─────┘
-              │
-    ┌─────────┼─────────┐
-    │         │         │
-┌───▼──┐ ┌───▼──┐ ┌───▼──┐
-│Brand │ │Sales │ │Legal │
-└───┬──┘ └───┬──┘ └───┬──┘
-    │         │         │
-    └─────────┼─────────┘
-              │
-    ┌─────────▼─────────┐
-    │    DataCenter     │ (Hub)
-    └─────────┬─────────┘
-              │
-    ┌─────────┼─────────┐
-    │         │         │
-┌───▼──┐ ┌───▼──┐ ┌───▼──┐
-│Financ│ │Insp. │ │Admin │
-└──────┘ └──────┘ └──────┘
-```
-
-DataCenter is the hub, but NOT a bottleneck. Messages route through it, not queue at it.
-
----
-
-## Information Classification & Model Routing
-
-Every piece of information entering the brain gets classified, and classification determines which AI model processes it:
-
-| Level | Label | Examples | Model Routing |
-|-------|-------|----------|---------------|
-| 🔴 TS | Top Secret | API keys, credentials, private tokens | Local only, never cloud |
-| 🟠 C | Confidential | Financial data, strategy docs, user PII | Premium models (DeepSeek Pro) |
-| 🟡 I | Internal | Dept outputs, reports, meeting notes | Free models (GLM-4-Flash) |
-| 🟢 P | Public | Published content, marketing materials | Any model, any channel |
-
-This is not just security — it's cost optimization. Why burn premium tokens on internal memos?
-
----
-
-## Agent Lifecycle Management
-
-The brain tracks every agent in the organization:
-
-```
-Agent: Brand Department
-Status: ACTIVE
-Cron Jobs: 3 (daily learning, daily report, content publish)
-Last Activity: 2026-06-25 15:52 CST
-Consecutive Errors: 0
-Model: deepseek/deepseek-v4-pro (publish), zai/glm-4-flash (learning)
-```
-
-When an agent goes silent (no activity for 24h) or errors spike (2+ consecutive failures), the brain flags it for inspection.
-
----
-
-## Implementation Guide
-
-### Phase 1: Pipeline Setup
-1. Establish the `company/data/` directory structure
-2. Define data sources (department outputs, external feeds, research)
-3. Implement the 8-step pipeline (initially manual, then cron-automated)
-4. Set the 24h processing SLA
-
-### Phase 2: Inference Engine
-1. Build WISDOM_GRAPH from first week of processed data
-2. Generate initial ACTION_PIPELINE
-3. Validate inferences against real outcomes
-4. Tune the extrapolation heuristics
-
-### Phase 3: Neural Chain
-1. Map existing communication paths
-2. Identify single points of failure
-3. Add redundant channels (minimum 3)
-4. Test failure scenarios (kill one channel, verify others work)
-
----
-
-## Dependencies
-
-Designed for the **OpenClaw** agent runtime:
-- `cron` for scheduled pipeline execution
-- `sessions_send` for neural chain messaging
-- Workspace file system for data persistence
-- Multi-model routing for cost optimization
-
-Methodology is platform-agnostic. Implementation details are OpenClaw-specific.
-
----
-
-## Companion Skills
-
-- **opc-os-core** — The complete one-person company operating system that this brain powers
-- **agent-org-manager** — Multi-department setup and management
-- **cron-health-monitor** — Cron job health monitoring (brain's self-diagnostic tool)
-
----
-
-## License
-
-MIT — Free to use, modify, distribute. Built from production intelligence operations, not theory.
+- [references/pipeline-playbook.md](references/pipeline-playbook.md) — 八步管线每步操作手册+SLA速查
+- [references/inference-patterns.md](references/inference-patterns.md) — WISDOM_GRAPH/ACTION_PIPELINE/ONE_MORE_THING完整逻辑
+- [references/neural-chain-design.md](references/neural-chain-design.md) — 三通道架构细节+故障切换+心跳
