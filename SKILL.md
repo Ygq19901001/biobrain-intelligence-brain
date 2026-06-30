@@ -1,16 +1,21 @@
 ---
 name: intelligence-brain
 slug: intelligence-brain
-version: 1.1.0
+version: 1.1.1
 displayName: "Intelligence Brain — AI原生公司大脑"
-summary: "AI-native company intelligence engine with 8-step metabolic pipeline, cross-file inference, neural chain design, and information classification routing."
-description: "AI-native company intelligence engine with 8-step metabolic pipeline, cross-file inference, neural chain design, and information classification routing."
+summary: "AI原生公司情报大脑：八步代谢管线+跨文件推论+三通道神经链+四级密级路由。信息吃进去，决策吐出来。"
+description: "AI原生公司情报大脑引擎：八步代谢管线（采集→解析→拆解→整理→合并→使用→删除→举一反三）+跨文件推论（三条日报拼出一个真相）+三通道神经链冗余+四级信息密级自动路由。信息吃进去，决策吐出来——大脑不是数据库，是消化系统。触发词：「公司大脑」「情报引擎」「信息代谢」「知识图谱」「决策支持」「AI大脑」「情报处理」「信号处理」"
 tags:
   - intelligence
   - pipeline
   - brain
   - classification
   - agent
+  - 公司大脑
+  - 情报处理
+  - 知识图谱
+  - 信息代谢
+  - 决策支持
 license: MIT
 ---
 
